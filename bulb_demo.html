@@ -61,14 +61,7 @@
          .box:hover{ 
             animation-play-state: paused; /* 当鼠标移动上去，动画暂停 */
          }
-         .box:touchstart{ /* 移动端没有hover事件，有touch事件 */
-            animation-play-state: paused; /* 当鼠标移动上去，动画暂停 */
-         }
          .box:hover .bulb{  /* 当鼠标移动上去，改变背景值和阴影值 */
-            background-color: #fff;
-            box-shadow: 0px 0px 100px 0px #fff;
-         }
-         .box:touchstart .bulb{  /* 当鼠标移动上去，改变背景值和阴影值 */
             background-color: #fff;
             box-shadow: 0px 0px 100px 0px #fff;
          }
@@ -81,6 +74,23 @@
          }
 
         </style>
+
+        <script language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+        <script type="text/javascript">
+            $(
+
+                function()
+                {
+                    document.body.addEventListener('touchstart', 
+                            function () 
+                            { 
+                                $(".box").css("animation-play-state","paused");
+                                $(".box .bulb").css({background-color:"#fff",box-shadow: "0px 0px 100px 0px #fff"});
+                            }
+                        );
+                }
+            )
+        </script>>
     </head>
     <body>     
         <div class='box'>
