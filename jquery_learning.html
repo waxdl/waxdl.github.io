@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>jQuery作业</title>
+        <script language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script language="javascript" charset="GB2312">
+            $(
+                function()
+                {
+                    $("#zy1 tr:first").children().text("我是第一行")
+                    $("#zy1 tr:last").children().text("我是最后一行")
+                    $("#zy2 li:odd").text("奇数行")                                  
+                    $("#zy2>li:even").text("偶数行")
+                    $("#zy3 tr:eq(1)").children().text("我是第二行")
+                    $("#zy4 li:gt(4)").text("我在第五行之后")
+                    $("#zy4 li:lt(4)").text("我在第五行之前")
+                    $("#zy5 :header").text("我是h标题标签")
+                }
+            )
+        </script>
+        <style>
+         如有需要，此处编写CSS代码
+        </style>
+    </head>
+    <body>     
+     <h1>[作业1]</h1>
+        <table id="zy1" border="1">
+            <tr>
+                <td>zy1</td>
+            </tr>
+            <tr>
+                <td>zy1</td>
+            </tr>
+            <tr>
+                <td>zy1</td>
+            </tr>
+            <tr>
+                <td>zy1</td>
+            </tr>
+            <tr>
+                <td>zy1</td>
+            </tr>
+        </table>        
+     <h1>[作业2]</h1>
+        <ol id="zy2" type="1">
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+            <li>zy2</li>
+        </ol>
+     <h1>[作业3]</h1>
+        <table id="zy3" border="1">
+            <tr><td>zy3</td></tr>
+            <tr><td>zy3</td></tr>
+            <tr><td>zy3</td></tr>
+        </table>
+     <h1>[作业4]</h1>
+        <ol id="zy4" type="1">
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+            <li>zy4</li>
+        </ol>
+     <h1>[作业5]</h1>
+        <div id="zy5">
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+        </div>        
+    </body>
+</html>

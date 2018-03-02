@@ -1,0 +1,33 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+            <title>第二十二节jQuery作业</title>
+            <script language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script language="javascript" charset="GB2312">
+             $(
+                                function(){
+                                        $("#div1").hover(function(){$("#div2").append("hover<br/>");},function(){$("#div2").append("over<br/>");});        
+                                        $("#div1").toggle(function(){$("#div2").append("first click<br/>");},function(){$("#div2").append("second click<br/>");});
+                                        $("#div1").dblclick(function(){$("#div2").append("dblclick div<br/>")});
+                                        $("#div1").mousedown(function(){$("#div2").append("mousedown<br/>");});
+                                        $("#div1").mouseup(function(){$("#div2").append("mouseup<br/>");});
+                                        $("#div1").mouseover(function(){$("#div2").append("mouseover<br/>");});
+                                        //$("#div1").mousemove(function(){$("#div2").append("mousemove<br/>");});
+                                        $("#div1").mouseenter(function(){$("#div2").append("mouseenter<br/>");});
+                                        $("#div1").mouseout(function(){$("#div2").append("mouseout<br/>");});
+                                        $("#div1").mouseleave(function(){$("#div2").append("mouseleave<br/>");});
+                                }
+                         )
+                         
+            </script>
+            <style>
+             #div1{height:200px;width:200px;background-color:green}
+             #div2{height:200px;width:200px;background-color:red}
+            </style>
+        </head>
+        <body>
+                        <div id="div1"></div>
+                        <div id="div2"></div>
+        </body>
+    </html>

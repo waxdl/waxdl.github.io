@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<script language="javascript">
+$(document).ready(function(){
+        
+        $("#bt1").click(function(){
+                $("div:contains(abc)").text("我包含abc")
+        });
+        
+        $("#bt2").click(function(){
+                $("div:empty").text("我不包含任何文本和子元素")
+        });
+        
+        $("#bt3").click(function(){
+                $("div:parent").text("我包含文本或元素")
+        });
+        
+        $("#bt4").click(function(){
+                $("div:has(p)").text("我包含p元素")        
+        })
+        
+        $("#bt5").click(function(){
+                $("ul:hidden li").text("我ul原本不可见并设置为可见");
+                $("ul:hidden").show(500);
+        });
+        
+        $("#bt6").click(function(){
+                $("dl:visible").hide(500);
+        });
+        
+});
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+    <input type="button" id="bt1" value="Element:contains(text)用法,找出所有包含abc的DIV并将其内容改为  '我包含abc'" /><br />
+    <input type="button" id="bt2" value="Element:empty用法,找出所有不包含文本或子元素的DIV并将其内容改为   '我不包含任何文本和子元素'" /><br />
+    <input type="button" id="bt3" value="Element:parent用法,找出所有包含文本或子元素的DIV并将其内容改为   '我包含文本或元素'" /><br />
+    <input type="button" id="bt4" value="Element:has(selector)用法,找出包含p元素的DIV并将其内容改为   '我包含p元素'" /><br />
+    <input type="button" id="bt5" value="Element:hidden用法，找出所有不可见元素对象ul,将其li内容修改为&ldquo;我原本不可见&rdquo;并设置为可见" /><br />
+    <input type="button" id="bt6" value="Element:visible用法，找出可见元素dl,并将其隐藏" /><br />
+    <ul style="display:none">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <dl>
+        <dd>我dl是可见的</dd>
+        <dd>我dl是可见的</dd>
+        <dd>我dl是可见的</dd>
+        <dd>我dl是可见的</dd>
+        <dd>我dl是可见的</dd>
+    </dl>
+    <div>abc</div>
+    <div>abc</div>
+    <div>abc</div>
+    <div>abc</div>
+    <div>abc</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p><span></span></p>
+    <p><span></span></p>
+    <p><span></span></p>
+    <p><span>测试</span></p>
+    <p>测试2</p>
+    <div><p></p></div>
+    <div><p></p></div>
+    <div><p></p></div>
+    <div><p></p></div>
+    <input name="" type="hidden" value="" />
+</body>
+</html>
