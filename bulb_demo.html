@@ -48,7 +48,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            box-shadow: 0px 0px 5px 0px #fff inset;
+            box-shadow: 0px 0px 10px 0px #fff inset;
             margin: auto;            
          }
          .box .bulb .wick{
@@ -81,13 +81,25 @@
 
                 function()
                 {
-                    document.body.addEventListener('touchstart', /* 移动端触摸事件 */
-                            function () 
-                            { 
+                    /* 移动端触摸事件 */
+                    document.addEventListener('touchstart',touch, false);  
+                    document.addEventListener('touchmove',touch, false);  
+                    document.addEventListener('touchend',touch, false);  
+
+                    function touch (event)
+                    {
+                        var event = event || window.event;  
+                         switch(event.type){  
+                            case "touchstart":  
                                 $(".box").css("animation-play-state","paused");
-                                $(".box .bulb").css({background-color:"#fff",box-shadow: "0px 0px 100px 0px #fff"});
-                            }
-                        );
+                                $(".box .bulb").css({"background-color":"#fff","box-shadow":"0px 0px 100px 0px #fff"});
+                                break;
+                            case "touchend":
+                                $(".box").css("animation-play-state","running");
+                                $(".box .bulb").css({"background-color":"#2b142f","box-shadow":"0px 0px 10px 0px #fff inset"});
+                                break;
+                        }
+                    }                    
                 }
             )
         </script>>
